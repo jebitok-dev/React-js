@@ -1,16 +1,29 @@
 {
-    "extends": ["eslint:recommend", "prettier", "prettier/react"],
-    "plugins": [],
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
+    "extends": [
+        "eslint:recommended",
+         "prettier:import/errors",
+         "plugin:jsx-ally/recommended",
+         "prettier/react"
+        ],
+        "rules":{
+            "react/props-types": 0
+        },
+        "plugins": ["react", "import", "jsx-ally"],
+        "parserOptions": {
+            "ecmaVersion": 2018,
+            "sourceType": "module",
+            "ecmaFeatures": {
+                "jsx": true
         }
     },
     "env": {
         "es6": true,
         "browser": true,
         "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }
