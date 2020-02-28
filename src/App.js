@@ -5,7 +5,8 @@ const Pet = (props) => {
         React.createElement("h2", null, props.breed)
     ]);
 }
-//component class or functional passes return keyword
+//component class or functional passes return keyword 
+//null represent attributes
 const App = () => {
     return React.createElement("div",null, [
         React.createElement("h1", null, "Adopt me"),
