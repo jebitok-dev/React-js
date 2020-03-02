@@ -2,13 +2,14 @@
     "extends": [
         "eslint:recommended",
          "prettier:import/errors",
-         "plugin:jsx-ally/recommended",
+         "plugin:jsx-a11y/recommended",
          "prettier/react"
         ],
         "rules":{
-            "react/props-types": 0
+            "react/props-types": 0,
+            "react-hooks/rules-of-hooks": "error"
         },
-        "plugins": ["react", "import", "jsx-ally"],
+        "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
         "parserOptions": {
             "ecmaVersion": 2018,
             "sourceType": "module",
