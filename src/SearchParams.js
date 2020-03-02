@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 //replaceLocation
 
 const SearchParams = () => {
+    //location represents current state
+    //updateLocation -> function to update state
 const [location, updateLocation] = useState("Seattle, WA")
     return (
         <div className="search-params">
@@ -13,7 +15,7 @@ const [location, updateLocation] = useState("Seattle, WA")
                         id="location" 
                         value={location}
                         placeholder="Location"
-                        onChange={(e) => updateLocation
+                        onChange={(e) => updateLocation//event takes callback function
                         (e.target.value)}
                      />
                 </label>
