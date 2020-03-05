@@ -8,6 +8,9 @@
     "lint": "enlist\"src/**/*.{js,jsx}\"--quiet",
     "dev": "parcel src/index.html"
   },
+  "browserslist": [
+    "last 2 Firefox versions"
+],
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",

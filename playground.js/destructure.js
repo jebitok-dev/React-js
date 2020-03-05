@@ -13,3 +13,5 @@ console.log(play);
 console.log(laugh);
 console.log(run);
 console.log(sport);
+
+//props.name, props.animal, props.breed

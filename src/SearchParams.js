@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';//useState-hook
 import pet, { ANIMALS } from '@frontendmasters/pet';
+import Results from './Results'
 import dropDown from './dropdown';
 //import {usedropDown} from './dropdown';
 
@@ -11,7 +12,18 @@ const SearchParams = () => {
 const [location, updateLocation] = useState("Seattle, WA");
 const [breeds, updateBreeds] = useState([]);//animal-current state updateAnimal-fn to change state
 const [animal, AnimalDropdown]= dropDown("Animal", "dog", ANIMALS);
-const [breed, BreedDropdown, updateBreed] = dropDown("Breed", "", breeds);
+const [breed, BreedDropdown, updateBreed] = dropDown("Breed", "", breeds)
+const [pets, setPets] = useState([])
+
+  async function requestPets() {
+   const{animals} = await pet.animals({
+       location,
+       breed,
+       type: animal
+    })
+
+    setPets(animals || [])
+}
 
     useEffect(() => {
         updateBreeds([]);
@@ -26,7 +38,10 @@ const [breed, BreedDropdown, updateBreed] = dropDown("Breed", "", breeds);
     return (
         <div className="search-params">
             {name}
-            <form>
+            <form onSubmit= {(e) =>{
+                e.preventDefault();
+                    requestPets();
+            }}>
                 <label htmlFor="location">
                     Location
                     <input
@@ -41,6 +56,7 @@ const [breed, BreedDropdown, updateBreed] = dropDown("Breed", "", breeds);
                 <BreedDropdown/>
                 <button>Submit</button>
             </form>
+            <Results pets={pets} />
         </div>
     );
 };

@@ -6,7 +6,7 @@ const App = () => {
     return (
         <div>
             <h1>Adopt Pets!</h1>
-            <SearchParams /> //component
+            <SearchParams /> 
         </div>
     )
 }
