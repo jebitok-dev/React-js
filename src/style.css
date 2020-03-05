@@ -1,32 +1,54 @@
 * {
     box-sizing: border-box;
     color: #333;
-}body {
+}
+
+body {
     background-color: #81a696;
     background-image: url(./images/image.png);
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
-}.search-params {
+}
+
+.search{
+  background-color: #d9c148;
+  width: 715px;
+  padding: 15px;
+  border-radius: 9px;
+  float: left;
+  margin-bottom: 25px;
+}
+
+
+.search-params {
     width: 1100px;
     margin: 0 auto;
-}.search-params form {
+}
+
+.search-params form {
     background-color: #d9c148;
     width: 360px;
     margin: 0 25px 0 0;
     padding: 35px 15px 15px 15px;
     border-radius: 5px;
     float: left;
-}.search-params label {
+}
+
+.search-params label {
   display: block;
   width: 60px;
-}.search-params input,
+}
+
+.search-params input,
 .search-params select {
   margin-bottom: 30px;
   font-size: 18px;
   height: 30px;
   width: 325px;
   background-color: rgb(228, 228, 203);
-}.search-params button,
+}
+
+.search-params button,
 #modal button,
 .details button {
   background-color: #ad343e;
@@ -38,10 +60,16 @@
   display: block;
   margin: 0 auto;
   cursor: pointer;
-}.search-params button:hover {
+}
+
+.search-params button:hover {
   background-color: #122622;
-}.search-params button:active {
+}
+
+.search-params button:active {
   background-color: #5f1d22;
-}.search-params button:focus {
+}
+
+.search-params button:focus {
   border: 1px solid cornflowerblue;
 }
