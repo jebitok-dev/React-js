@@ -1,19 +1,22 @@
 import React from 'react'
 
-export default function ({name, animal, breed}) {
-    return React.createElement("div", null, [
-        React.createElement("h1", null, name),
-        React.createElement("h2", null, animal),
-        React.createElement("h2", null, breed)
-    ]);
-};
-
 const Pet = (props) => {
+    const {name, animal, breed, media, location, id} = props;
+    let data = ''
+    if (media.length) {
+        data = media[0].small;
+    }
     return (
-        <div>
-            <h1>{props.name}</h1>
-            <h2>{props.animal}</h2>
-            <h2>{props.breed}</h2>
-        </div>
+        <a href={`/detail/${id}`} className="pet">
+            <div className="image-container">
+                <img src={data} alt={name} />
+            </div>
+            <div className="info">
+                <h1>{name}</h1>
+                <h2>{`${animal} - ${breed} - ${location}`}</h2>
+            </div>
+        </a>
     );
 };
+
+export default Pet;

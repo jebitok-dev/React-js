@@ -23,6 +23,7 @@ const [pets, setPets] = useState([])
     })
 
     setPets(animals || [])
+    console.log(animals)
 }
 
     useEffect(() => {
