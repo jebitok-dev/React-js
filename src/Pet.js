@@ -7,7 +7,7 @@ const Pet = (props) => {
         data = media[0].small;
     }
     return (
-        <a href={`/detail/${id}`} className="pet">
+        <a href={`/details/${id}`} className="pet">
             <div className="image-container">
                 <img src={data} alt={name} />
             </div>
