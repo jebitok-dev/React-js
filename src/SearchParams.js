@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';// useState-hook
 import pet, { ANIMALS } from '@frontendmasters/pet';
 import Results from './Results';
 import dropDown from './dropdown';
-/* eslint-disable */
+
 const SearchParams = () => {
   const [location, updateLocation] = useState('Seattle, WA');
-  const [breeds, updateBreeds] = useState([]);// animal-current state updateAnimal-fn to change state
+  const [breeds, updateBreeds] = useState([]);
   const [animal, AnimalDropdown] = dropDown('Animal', 'dog', ANIMALS);
   const [breed, BreedDropdown, updateBreed] = dropDown('Breed', '', breeds);
   const [pets, setPets] = useState([]);
@@ -18,7 +18,6 @@ const SearchParams = () => {
     });
 
     setPets(animals || []);
-    console.log(animals);
   }
 
   useEffect(() => {
@@ -27,9 +26,9 @@ const SearchParams = () => {
     pet.breeds(animal).then(({ breeds }) => {
       const breedItems = breeds.map(({ name }) => name);
       updateBreeds(breedItems);
-    }, console.error);
+    });
   }, [animal, updateBreed, updateBreeds]);
-
+  /* eslint-disable */
   return (
     <div className="search-params">
       {name}
